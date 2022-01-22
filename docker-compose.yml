@@ -1,0 +1,14 @@
+services:
+  mpbuilder:
+    build:
+      context: .
+      args:
+         # Settings are set here:
+         # Please make sure you use .TAR.XZ archive
+         micropython_src_url: 'https://micropython.org/resources/source/micropython-1.18.tar.xz'
+         idf_build_platforms: 'esp32, esp32s2'
+         port_to_build: 'esp32'
+    volumes:
+      - .:/build
+    platform: linux/amd64
+    #container_name: mpbuilder
