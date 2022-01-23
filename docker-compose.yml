@@ -12,3 +12,5 @@ services:
       - .:/build
     platform: linux/amd64
     #container_name: mpbuilder
+    environment:
+      port_to_build: 'esp32'

@@ -25,6 +25,9 @@ RUN wget -c $micropython_src_url -O - | tar -xJ -C $(pwd)
 RUN mv $(basename $micropython_src_url .tar.xz) "micropython_src"
 RUN cd micropython_src &&\
     make -C mpy-cross
+
+COPY ./modules /mpbuilder/micropython_src/ports/esp32/modules
+
 # Build Submodules & Firmware
 RUN cd micropython_src/ports/$port_to_build && \
     export IDF_PATH=/mpbuilder/esp/esp-idf/ && \
@@ -32,4 +35,5 @@ RUN cd micropython_src/ports/$port_to_build && \
     #make submodules &&\
     make
 
-RUN cp /mpbuilder/micropython_src/ports/$port_to_build/build-GENERIC/firmware.bin /build/bla.bin #ok11
+#RUN cp /mpbuilder/micropython_src/ports/$port_to_build/build-GENERIC/firmware.bin /build/bla.bin #ok11
+CMD ["cp", "/mpbuilder/micropython_src/ports/esp32/build-GENERIC/firmware.bin", "/build/firmware"]
