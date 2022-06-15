@@ -1,16 +1,27 @@
+# docker-compose build --progress=plain mpbuilder
+
 services:
   mpbuilder:
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
     build:
       context: .
       args:
-         # Settings are set here:
+         ##### Settings #####
+
          # Please make sure you use .TAR.XZ archive
-         micropython_src_url: 'https://micropython.org/resources/source/micropython-1.18.tar.xz'
+         idf_version_tag: 'v4.3.1'
+         micropython_version_tag: 'v1.18'
          idf_build_platforms: 'esp32, esp32s2'
-         port_to_build: 'esp32'
+         idf_target:  'esp32s2'
+    environment:
+      idf_version_tag: 'v4.3.1'
+      micropython_version_tag: 'v1.18'
+      idf_build_platforms: 'esp32, esp32s2'
+      port_to_build: 'esp32'
+      idf_target: 'esp32'
+      MICROPY_BOARD: 'ESP32_TTGO_T_DISPLAY'
     volumes:
       - .:/build
     platform: linux/amd64
-    #container_name: mpbuilder
-    environment:
-      port_to_build: 'esp32'
