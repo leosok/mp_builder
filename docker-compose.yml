@@ -11,14 +11,14 @@ services:
          ##### Settings #####
 
          # Please make sure you use .TAR.XZ archive
-         idf_version_tag: 'v4.3.1'
+         idf_version_tag: 'v4.2.3'
          micropython_version_tag: 'v1.18'
-         idf_build_platforms: 'esp32, esp32s2'
-         idf_target:  'esp32s2'
+         idf_build_platforms: 'esp32'
+         idf_target:  'esp32'
     environment:
-      idf_version_tag: 'v4.3.1'
+      idf_version_tag: 'v4.2.3'
       micropython_version_tag: 'v1.18'
-      idf_build_platforms: 'esp32, esp32s2'
+      idf_build_platforms: 'esp32'
       port_to_build: 'esp32'
       idf_target: 'esp32'
       MICROPY_BOARD: 'ESP32_TTGO_T_DISPLAY'

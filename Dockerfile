@@ -25,6 +25,10 @@ RUN git clone --branch $micropython_version_tag https://github.com/micropython/m
 RUN cd micropython_src &&\
     make -C mpy-cross
 
+# backup original modules
+RUN mkdir /modules_original
+COPY /mpbuilder/micropython_src/ports/esp32/modules /modules_original
+
 # copy modules
 COPY ./modules /mpbuilder/micropython_src/ports/esp32/modules
 
