@@ -1,3 +1,4 @@
+⚠️ **Currently untested. This was not used for around a year. It may not work. But most of it should!** ⚠️ 
 # MicroPython Builder README 📖
 
 ⚠️ **Please note:** This setup is designed specifically for ESP32-based boards. If you plan to use this setup for other types of boards, adjustments may be needed in the Dockerfile, Docker Compose file, and the builder script accordingly.
