@@ -22,11 +22,11 @@ make submodules
 #       BUILD COMMANDS     #
 ############################
 echo "Cloning Display-Driver st7789_mpy"
-rm -rf /mpbuilder/st7789_mpy
+
 git clone https://github.com/russhughes/st7789_mpy.git /mpbuilder/st7789_mpy
 # Need to do this because of breaking changes to micropython
 cd /mpbuilder/st7789_mpy
-git reset --hard 786d78d4c71cd43e8fe3e9b1f36c8a3f92dbe6a3
+#git reset --hard 786d78d4c71cd43e8fe3e9b1f36c8a3f92dbe6a3
 
 # clean modules directory + reload modules:
 # backup original modules:

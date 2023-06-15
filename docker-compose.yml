@@ -12,12 +12,12 @@ services:
 
          # Please make sure you use .TAR.XZ archive
          idf_version_tag: 'v4.2.3'
-         micropython_version_tag: 'v1.18'
+         micropython_version_tag: 'v1.19.1'
          idf_build_platforms: 'esp32'
          idf_target:  'esp32'
     environment:
       idf_version_tag: 'v4.2.3'
-      micropython_version_tag: 'v1.18'
+      micropython_version_tag: 'v1.19.1'
       idf_build_platforms: 'esp32'
       port_to_build: 'esp32'
       idf_target: 'esp32'
